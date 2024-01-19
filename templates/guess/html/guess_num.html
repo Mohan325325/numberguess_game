@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- Bootstrap JS (popper.js included) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <style>
+    .container{
+        margin-top: 200px;
+        margin-left: 200px;
+        border: black solid;
+        border-radius: 200px;
+        text-align: center;
+    }
+    h1{
+        color: darkblue;
+    }
+    h2{
+        color:firebrick;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="MOHAN">
+        <br><br><br>
+            <h1>Number Guessing Game</h1>
+            <form method="post" action="{% url 'play_game' %}">
+                {% csrf_token %}
+                <h2><label for="guess">Enter your guess (1-100):</label></h2>
+                <input type="number" name="guess" required><br><br>
+                <a href="{% url 'play_game' %}"><button class="btn btn-success">SUBMIT GUESS</button></a>
+                <br>
+            </form>
+            {% if feedback %}
+                <p>{{ feedback }}</p>
+                <p>Attempts: {{ attempts }} / {{ max_attempts }}</p>
+                <br>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

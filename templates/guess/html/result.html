@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+            <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- Bootstrap JS (popper.js included) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <style>
+    .container{
+        margin-top: 200px;
+        margin-left: 200px;
+        border: black solid;
+        border-radius: 200px;
+        text-align: center;
+    }
+    h1{
+        color: darkblue;
+    }
+    p{
+        font-size: 20px;
+        color: green;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="container2">
+            <br><br><br>
+            <h1>Game Result</h1>
+            <p>{{ message }}</p>
+            {% if play_again %}
+                <a href="{% url 'play_game' %}"><button class="btn btn-success">PLAY AGAIN</button></a>
+                <br><br><br>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

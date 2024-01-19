@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- Bootstrap JS (popper.js included) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<style>
+    .container{
+        margin-top: 200px;
+        margin-left: 200px;
+        border: black solid;
+        border-radius: 200px;
+        text-align: center;
+    }
+    h1{
+        color: darkblue;
+    }
+    h2{
+        color:firebrick;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+            <div class="row my-3">
+                <div class="col-sm-6 offset-sm-3">
+
+                    <form method="post" action="{% url 'home' %}">
+                        {% csrf_token %}
+                        <h1>Welcome to the Number Guessing Game!</h1>
+                        <h2>NAME</h2><input type="text" name="name" placeholder="ENTER YOUR NAME"><br><br>
+                        <button id="mohan" class="btn btn-success">START GAME</button>
+                    </form>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
