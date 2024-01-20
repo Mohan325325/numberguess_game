@@ -29,11 +29,11 @@
         <div class="MOHAN">
         <br><br><br>
             <h1>Number Guessing Game</h1>
-            <form method="post" action="{% url 'play_game' %}">
+            <form method="post" action="{% url 'guess_num' 'player_name' %}">
                 {% csrf_token %}
                 <h2><label for="guess">Enter your guess (1-100):</label></h2>
                 <input type="number" name="guess" required><br><br>
-                <a href="{% url 'play_game' %}"><button class="btn btn-success">SUBMIT GUESS</button></a>
+                <a href="{% url 'guess_num' 'player_name' %}"><button class="btn btn-success">SUBMIT GUESS</button></a>
                 <br>
             </form>
             {% if feedback %}

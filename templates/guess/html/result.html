@@ -32,7 +32,7 @@
             <h1>Game Result</h1>
             <p>{{ message }}</p>
             {% if play_again %}
-                <a href="{% url 'play_game' %}"><button class="btn btn-success">PLAY AGAIN</button></a>
+                <a href="{% url 'guess' 'player_name' %}"><button class="btn btn-success">PLAY AGAIN</button></a>
                 <br><br><br>
             {% endif %}
         </div>

@@ -6,6 +6,6 @@ class session(models.Model):
     secret_number = models.IntegerField()
     attempts = models.IntegerField()
     is_winner = models.BooleanField()
-
-    def __str__(self):
-        return f"{self.player_name} - {'Winner' if self.is_winner else 'Loser'}"
+    #
+    # def __str__(self):
+    #     return f"{self.player_name} - {'Winner' if self.is_winner else 'Loser'}"

@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('',views.home,name='home'),
-    path('play_game',views.guess_num,name='play_game')
+    path('guess/<str:player_name>/',views.guess,name='guess'),
+    path('guess_num/<str:player_name>/',views.guess_num,name='guess_num'),
 ]
