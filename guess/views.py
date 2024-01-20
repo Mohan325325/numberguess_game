@@ -40,9 +40,7 @@ def guess_num(request, player_name):
         return render(request, 'guess/html/guess_num.html', {'feedback': feedback, 'attempts': attempts, 'max_attempts': max_attempts})
 
 def guess(request,player_name):
-        # Clear session for a new user or a new game for an existing user
         request.session.clear()
-        # Generate a new secret number for each new game
         secret_number = random.randint(1, 100)
         request.session['secret_number'] = secret_number
 
